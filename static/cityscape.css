@@ -1,0 +1,75 @@
+body {
+  padding:0;
+  margin:0;
+  font-family: 'Slabo 27px', serif;
+}
+header {
+  text-align:center;
+  padding:100px 0;
+}
+h1 {
+  font-size:4em;
+  letter-spacing:.2em;
+  margin:0; padding:0;
+  color:#f6f6f6;
+  text-shadow:3px 3px 0 #01A2A6, 6px 6px 0 #2F2933;
+}
+p {
+  max-width:300px;
+  display:block;
+  margin:auto;
+  color:#f6f6f6;
+  text-shadow:1px 1px 0px rgba(0,0,0,0.3);
+}
+a {
+  color:#2F2933;
+  text-decoration: none;
+  border-bottom:1px solid #2F2933;
+}
+
+
+.cityscape {}
+.cityscape-title {
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  font-weight:100;
+  font-size:2.8em;
+  margin:0 0 0 20px;
+  padding:30px 0;
+}
+
+.style1 { background:#01A2A6; }
+.style1 svg path,
+.style1 svg polygon { fill:#29D9C2; }
+.style1 .cityscape-title {
+  color:#29D9C2;
+}
+
+.style2 { background:#2F2933; }
+.style2 svg path,
+.style2 svg polygon { fill:#01A2A6; }
+.style2 .cityscape-title {
+  color:#01A2A6;
+}
+
+.style3 { background:#BDF271; }
+.style3 svg path,
+.style3 svg polygon { fill:#2F2933; }
+.style3 .cityscape-title {
+  color:#2F2933;
+}
+
+.style4 { background:#29D9C2; }
+.style4 svg path,
+.style4 svg polygon { fill:#FFFFA6; }
+.style4 .cityscape-title {
+  color:#FFFFA6;
+}
+
+.style5 { background:#FFFFA6; }
+.style5 svg path,
+.style5 svg polygon { fill:#BDF271; }
+.style5 .cityscape-title {
+  color:#BDF271;
+}
+
