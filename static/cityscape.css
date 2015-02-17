@@ -5,7 +5,7 @@ body {
 }
 header {
   text-align:center;
-  padding:100px 0;
+  padding:100px 0 20px;
 }
 h1 {
   font-size:4em;
@@ -25,6 +25,34 @@ a {
   color:#2F2933;
   text-decoration: none;
   border-bottom:1px solid #2F2933;
+}
+ul {
+  list-style-type: none;
+  margin:0; padding:0;
+}
+#count {
+  color:#2F2933;
+}
+#list {}
+input {
+  max-width:600px;
+  display:block;
+  margin:0 auto 60px auto;
+  border:none;
+  font-size:1.2em;
+  padding:10px;
+  font-family: 'Slabo 27px', serif;
+  opacity:.7;
+  -webkit-transition: .3s;
+     -moz-transition: .3s;
+      -ms-transition: .3s;
+       -o-transition: .3s;
+          transition: .3s;
+  border-radius:2px;
+}
+input:focus {
+  outline:none;
+  opacity:1;
 }
 
 

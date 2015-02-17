@@ -4,29 +4,49 @@
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="static/svginject.js"></script>
+  <script src="static/list.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="static/cityscape.css">
 </head>
-<body>
-  <header class="style1">
+<body class="style1">
+  <header>
     <h1>CITYSCAPE</h1>
-    <p>SVG silhouettes of the world's largest cities for use in your designs but mostly for conference websites because it seems perfectly fit. Contributions welcome on <a href="https://github.com/svmatthews/cityscape" target="_blank">github</a>.</p>
+    <p>SVG silhouettes of <span id="count"></span> of the world's largest cities for use in your designs but mostly for conference websites because it seems perfectly fit. Contributions welcome on <a href="https://github.com/svmatthews/cityscape" target="_blank">github</a>.</p>
   </header>
-  <div class="cityscape style1"><h2 class="cityscape-title">amsterdam</h2><img class="inject-me" src="svg/amsterdam.svg"></div>
-  <div class="cityscape style2"><h2 class="cityscape-title">berlin</h2><img class="inject-me" src="svg/berlin.svg"></div>
-  <div class="cityscape style3"><h2 class="cityscape-title">brussels</h2><img class="inject-me" src="svg/brussels.svg"></div>
-  <div class="cityscape style4"><h2 class="cityscape-title">copenhagen</h2><img class="inject-me" src="svg/copenhagen.svg"></div>
-  <div class="cityscape style2"><h2 class="cityscape-title">london</h2><img class="inject-me" src="svg/london.svg"></div>
-  <div class="cityscape style5"><h2 class="cityscape-title">madrid</h2><img class="inject-me" src="svg/madrid.svg"></div>
-  <div class="cityscape style4"><h2 class="cityscape-title">moscow</h2><img class="inject-me" src="svg/moscow.svg"></div>
-  <div class="cityscape style3"><h2 class="cityscape-title">munich</h2><img class="inject-me" src="svg/munich.svg"></div>
-  <div class="cityscape style1"><h2 class="cityscape-title">paris</h2><img class="inject-me" src="svg/paris.svg"></div>
-  <div class="cityscape style2"><h2 class="cityscape-title">prague</h2><img class="inject-me" src="svg/prague.svg"></div>
-  <div class="cityscape style5"><h2 class="cityscape-title">rome</h2><img class="inject-me" src="svg/rome.svg"></div>
-  <div class="cityscape style4"><h2 class="cityscape-title">warsaw</h2><img class="inject-me" src="svg/warsaw.svg"></div>
+  <div id="list">
+    <input class="search" placeholder="Enter a city..." />
+    <ul class="list" id="the-list">
+      <li class="cityscape style1"><h2 class="cityscape-title">amsterdam</h2><img class="inject-me" src="svg/amsterdam.svg"></li>
+      <li class="cityscape style2"><h2 class="cityscape-title">berlin</h2><img class="inject-me" src="svg/berlin.svg"></li>
+      <li class="cityscape style3"><h2 class="cityscape-title">brussels</h2><img class="inject-me" src="svg/brussels.svg"></li>
+      <li class="cityscape style4"><h2 class="cityscape-title">copenhagen</h2><img class="inject-me" src="svg/copenhagen.svg"></li>
+      <li class="cityscape style2"><h2 class="cityscape-title">london</h2><img class="inject-me" src="svg/london.svg"></li>
+      <li class="cityscape style5"><h2 class="cityscape-title">madrid</h2><img class="inject-me" src="svg/madrid.svg"></li>
+      <li class="cityscape style4"><h2 class="cityscape-title">moscow</h2><img class="inject-me" src="svg/moscow.svg"></li>
+      <li class="cityscape style3"><h2 class="cityscape-title">munich</h2><img class="inject-me" src="svg/munich.svg"></li>
+      <li class="cityscape style1"><h2 class="cityscape-title">paris</h2><img class="inject-me" src="svg/paris.svg"></li>
+      <li class="cityscape style2"><h2 class="cityscape-title">prague</h2><img class="inject-me" src="svg/prague.svg"></li>
+      <li class="cityscape style5"><h2 class="cityscape-title">rome</h2><img class="inject-me" src="svg/rome.svg"></li>
+      <li class="cityscape style4"><h2 class="cityscape-title">warsaw</h2><img class="inject-me" src="svg/warsaw.svg"></li>
+    </ul>
+  </div>
+
   <script>
   var svg = document.querySelectorAll('img.inject-me');
-  SVGInjector(svg);
+  var svgOptions = {};
+  SVGInjector(svg, svgOptions, count);
+  makeList();
+
+  function count(c) {
+    document.getElementById('count').innerHTML = c;
+  }
+
+  function makeList() {
+    var options = {
+      valueNames: [ 'cityscape-title' ]
+    };
+    var sortList = new List('list', options);
+  }
   </script>
 </body>
 </html>
